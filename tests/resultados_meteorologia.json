@@ -1,0 +1,35 @@
+[
+  {
+    "pergunta": "Qual é a temperatura hoje da minha fazenda?",
+    "etapas": [
+      "rotear",
+      "consultar_api",
+      "responder_api"
+    ],
+    "resposta": "DADOS SIMULADOS — não são leituras de uma estação real.\nFazenda configurada: Fazenda Demonstração (demo).\nÚltima medição: 13/10/2026 09:26 UTC−04:00.\nTemperatura do ar: 28 °C.\nUmidade relativa do ar: 68 %.\nChuva acumulada nas 24 h anteriores à medição: 12 mm.\nVelocidade do vento: 8 km/h.\nTemperatura do solo: 25 °C.\nUmidade do solo: não informada neste sensor.\nA observação de solo do talhão, se cadastrada, aparece separadamente no plano de plantio.\nFonte meteorológica [API]: http://127.0.0.1:3002/medicoes/demo-atual",
+    "fontes_documentais": [],
+    "segundos": 0.11
+  },
+  {
+    "pergunta": "Quais as condições climáticas hoje? Posso plantar a soja?",
+    "etapas": [
+      "rotear",
+      "consultar_api",
+      "combinar_fontes",
+      "buscar",
+      "avaliar",
+      "responder"
+    ],
+    "resposta": "DADOS SIMULADOS — não são leituras de uma estação real.\nFazenda configurada: Fazenda Demonstração (demo).\nÚltima medição: 13/10/2026 09:26 UTC−04:00.\nTemperatura do ar: 28 °C.\nUmidade relativa do ar: 68 %.\nChuva acumulada nas 24 h anteriores à medição: 12 mm.\nVelocidade do vento: 8 km/h.\nTemperatura do solo: 25 °C.\nUmidade do solo: não informada neste sensor.\nA observação de solo do talhão, se cadastrada, aparece separadamente no plano de plantio.\nFonte meteorológica [API]: http://127.0.0.1:3002/medicoes/demo-atual\n\nPlano SIMULADO [PLANO]: talhao-demo-01, soja, Cuiabá/MT.\nCultivar fictícia: SOJA-DEMO-001 (fictícia); ciclo cadastrado: 115 dias.\nSolo: argilosa (simulada); umidade: 28% volumétricos; encharcado: não; trafegável: sim.\nObservação do solo: 13/10/2026 09:26 UTC−04:00.\nJanela FICTÍCIA: 01/10/2026 a 30/11/2026; hoje está dentro.\nRegra de umidade somente para teste: 20–35% volumétricos. Não é recomendação agronômica nem ZARC.\nSolo e calendário atendem às regras FICTÍCIAS cadastradas para este cenário. Isso não confirma autorização de plantio real.\nFonte [PLANO]: http://127.0.0.1:3002/planos_plantio/demo-soja\n\nDocumento [1]: “A faixa de temperatura adequada para a semeadura da soja é de 20 ° C a 30 ° C”.\nA temperatura simulada do ar, 28 °C [API], está numericamente dentro desse intervalo [1].\nA temperatura simulada do solo, 25 °C [API], está numericamente dentro desse intervalo [1].\nA passagem citada não identifica explicitamente ar ou solo; essa comparação numérica não substitui essa distinção. A condição hídrica e o calendário são avaliados separadamente no plano simulado acima; chuva e umidade do ar não substituem a medição do solo.\n\nAnálise demonstrativa: o plano, a cultivar e a janela da API são fictícios. Os documentos fornecem critérios técnicos, mas o cadastro de teste não substitui a verificação real do talhão e do zoneamento aplicável. Não há previsão do tempo nesta API.",
+    "fontes_documentais": [
+      {
+        "pagina": 46,
+        "cultura": "soja",
+        "titulo": "500 Perguntas, 500 Respostas - Soja (Embrapa)",
+        "total_paginas": 280,
+        "source": "500perguntas-soja.pdf"
+      }
+    ],
+    "segundos": 4.04
+  }
+]

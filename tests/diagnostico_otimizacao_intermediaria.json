@@ -1,0 +1,155 @@
+{
+  "executado_em_utc": "2026-10-13T12:29:54.108769+00:00",
+  "llm": "llama3.2:3b",
+  "embedding": "nomic-embed-text",
+  "avaliacao": "exemplos reais para inspeção, sem nota de precisão",
+  "cases": [
+    {
+      "caso": "origem",
+      "pergunta": "Qual é a origem da soja?",
+      "filtro": "soja",
+      "etapas": [
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 0,
+          "search_number": 1,
+          "query": "Qual é a origem da soja?"
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 1
+        },
+        {
+          "type": "step",
+          "node": "responder",
+          "attempt": 1
+        }
+      ],
+      "resposta": "A soja é originária da América do Sul, especificamente da região que hoje é conhecida como o Gran Paraguai, entre os rios Parana, Paraná e Uruguay, no Brasil, Argentina e Paraguai.",
+      "fontes": [
+        {
+          "cultura": "soja",
+          "total_paginas": 280,
+          "pagina": 233,
+          "source": "500perguntas-soja.pdf",
+          "titulo": "500 Perguntas, 500 Respostas - Soja (Embrapa)"
+        }
+      ],
+      "avaliacoes": [
+        {
+          "decision": "sufficient",
+          "evidence_ids": [
+            4
+          ],
+          "reason": "Decisão do avaliador; passagens conferidas pela aplicação.",
+          "clarification": ""
+        }
+      ],
+      "resultado": "answered",
+      "segundos": 34.01,
+      "resultado_esperado": "answered",
+      "caminho_esperado_ok": true
+    },
+    {
+      "caso": "ausente",
+      "pergunta": "Qual é o preço da soja hoje em Cuiabá?",
+      "filtro": "soja",
+      "etapas": [
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 0,
+          "search_number": 1,
+          "query": "Qual é o preço da soja hoje em Cuiabá?"
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 1
+        },
+        {
+          "type": "step",
+          "node": "reformular",
+          "attempt": 1
+        },
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 1,
+          "search_number": 2,
+          "query": "Qual é o preço da soja hoje em Cuiabá?\nTermos de busca: preço da soja em Cuiabá atualmente"
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 2
+        },
+        {
+          "type": "step",
+          "node": "sem_evidencia",
+          "attempt": 2
+        }
+      ],
+      "resposta": "Não encontrei evidências suficientes nos trechos consultados após duas buscas. Isso não prova que a informação não exista no acervo. Reformule a pergunta ou indique uma fonte mais específica.",
+      "fontes": [],
+      "avaliacoes": [
+        {
+          "decision": "insufficient",
+          "evidence_ids": [],
+          "reason": "Decisão do avaliador; passagens conferidas pela aplicação.",
+          "clarification": ""
+        },
+        {
+          "decision": "insufficient",
+          "evidence_ids": [],
+          "reason": "Decisão do avaliador; passagens conferidas pela aplicação.",
+          "clarification": ""
+        }
+      ],
+      "resultado": "insufficient",
+      "segundos": 5.8,
+      "resultado_esperado": "insufficient",
+      "caminho_esperado_ok": true
+    },
+    {
+      "caso": "ambigua",
+      "pergunta": "Como controlar essa doença?",
+      "filtro": null,
+      "etapas": [
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 0,
+          "search_number": 1,
+          "query": "Como controlar essa doença?"
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 1
+        },
+        {
+          "type": "step",
+          "node": "esclarecer",
+          "attempt": 1
+        }
+      ],
+      "resposta": "Qual doença, praga ou problema você quer abordar? Informe também a cultura.\nEnvie a pergunta completa incluindo esse detalhe para uma nova consulta.",
+      "fontes": [],
+      "avaliacoes": [
+        {
+          "decision": "clarify",
+          "evidence_ids": [],
+          "reason": "Referência não identificada na pergunta atual.",
+          "clarification": "Qual doença, praga ou problema você quer abordar? Informe também a cultura."
+        }
+      ],
+      "resultado": "clarification",
+      "segundos": 0.19,
+      "resultado_esperado": "clarification",
+      "caminho_esperado_ok": true
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+# Ambiente virtual Python
+.venv/
+.venv312/
+venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Variáveis de ambiente e credenciais
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Cache de testes
+.pytest_cache/
+.mypy_cache/
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.bak
+
+# IDE
+.vscode/
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

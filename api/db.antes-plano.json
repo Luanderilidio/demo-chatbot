@@ -1,0 +1,26 @@
+{
+  "fazendas": [
+    {
+      "id": "demo",
+      "nome": "Fazenda Demonstração",
+      "municipio": "Cuiabá",
+      "uf": "MT",
+      "fuso": "America/Cuiaba",
+      "simulado": true
+    }
+  ],
+  "medicoes": [
+    {
+      "id": "demo-atual",
+      "fazendaId": "demo",
+      "observado_em": "2026-10-13T12:49:58.734Z",
+      "simulado": true,
+      "temperatura_ar_c": 28,
+      "umidade_ar_pct": 68,
+      "chuva_24h_mm": 12,
+      "vento_kmh": 8,
+      "temperatura_solo_c": 25,
+      "umidade_solo_pct": null
+    }
+  ]
+}

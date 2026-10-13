@@ -1,0 +1,7 @@
+{
+  "name": "fazenda-meteorologia-simulada",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {"start": "node server.cjs", "seed": "node seed.cjs"},
+  "dependencies": {"json-server": "0.17.4"}
+}

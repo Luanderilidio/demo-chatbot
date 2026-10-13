@@ -1,0 +1,167 @@
+{
+  "executado_em_utc": "2026-10-13T12:34:04.130853+00:00",
+  "llm": "llama3.2:3b",
+  "embedding": "nomic-embed-text",
+  "avaliacao": "exemplos reais para inspeção, sem nota de precisão",
+  "cases": [
+    {
+      "caso": "origem",
+      "pergunta": "Qual é a origem da soja?",
+      "filtro": "soja",
+      "etapas": [
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 0,
+          "search_number": 1,
+          "query": "Qual é a origem da soja?",
+          "inicio_segundos": 0.007
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 1,
+          "inicio_segundos": 0.299
+        },
+        {
+          "type": "step",
+          "node": "responder",
+          "attempt": 1,
+          "inicio_segundos": 3.528
+        }
+      ],
+      "resposta": "A soja é originária da Ásia, mais provavelmente do nordeste da China, onde surgiu como uma planta rasteira, muito distinta da soja comercial que cultivamos hoje.",
+      "fontes": [
+        {
+          "pagina": 19,
+          "total_paginas": 280,
+          "source": "500perguntas-soja.pdf",
+          "cultura": "soja",
+          "titulo": "500 Perguntas, 500 Respostas - Soja (Embrapa)"
+        }
+      ],
+      "avaliacoes": [
+        {
+          "decision": "sufficient",
+          "evidence_ids": [
+            1
+          ],
+          "reason": "Decisão do avaliador; passagens conferidas pela aplicação.",
+          "clarification": ""
+        }
+      ],
+      "resultado": "answered",
+      "segundos": 5.58,
+      "resultado_esperado": "answered",
+      "caminho_esperado_ok": true
+    },
+    {
+      "caso": "ausente",
+      "pergunta": "Qual é o preço da soja hoje em Cuiabá?",
+      "filtro": "soja",
+      "etapas": [
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 0,
+          "search_number": 1,
+          "query": "Qual é o preço da soja hoje em Cuiabá?",
+          "inicio_segundos": 0.008
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 1,
+          "inicio_segundos": 0.124
+        },
+        {
+          "type": "step",
+          "node": "reformular",
+          "attempt": 1,
+          "inicio_segundos": 1.462
+        },
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 1,
+          "search_number": 2,
+          "query": "Qual é o preço da soja hoje em Cuiabá?\nTermos de busca: preço da soja em Cuiabá atualmente",
+          "inicio_segundos": 2.738
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 2,
+          "inicio_segundos": 2.836
+        },
+        {
+          "type": "step",
+          "node": "sem_evidencia",
+          "attempt": 2,
+          "inicio_segundos": 5.371
+        }
+      ],
+      "resposta": "Não encontrei evidências suficientes nos trechos consultados após duas buscas. Isso não prova que a informação não exista no acervo. Reformule a pergunta ou indique uma fonte mais específica.",
+      "fontes": [],
+      "avaliacoes": [
+        {
+          "decision": "insufficient",
+          "evidence_ids": [],
+          "reason": "Decisão do avaliador; passagens conferidas pela aplicação.",
+          "clarification": ""
+        },
+        {
+          "decision": "insufficient",
+          "evidence_ids": [],
+          "reason": "Não foi possível confirmar as passagens indicadas nas respectivas fontes.",
+          "clarification": ""
+        }
+      ],
+      "resultado": "insufficient",
+      "segundos": 5.37,
+      "resultado_esperado": "insufficient",
+      "caminho_esperado_ok": true
+    },
+    {
+      "caso": "ambigua",
+      "pergunta": "Como controlar essa doença?",
+      "filtro": null,
+      "etapas": [
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 0,
+          "search_number": 1,
+          "query": "Como controlar essa doença?",
+          "inicio_segundos": 0.004
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 1,
+          "inicio_segundos": 0.066
+        },
+        {
+          "type": "step",
+          "node": "esclarecer",
+          "attempt": 1,
+          "inicio_segundos": 0.067
+        }
+      ],
+      "resposta": "Qual doença, praga ou problema você quer abordar? Informe também a cultura.\nEnvie a pergunta completa incluindo esse detalhe para uma nova consulta.",
+      "fontes": [],
+      "avaliacoes": [
+        {
+          "decision": "clarify",
+          "evidence_ids": [],
+          "reason": "Referência não identificada na pergunta atual.",
+          "clarification": "Qual doença, praga ou problema você quer abordar? Informe também a cultura."
+        }
+      ],
+      "resultado": "clarification",
+      "segundos": 0.07,
+      "resultado_esperado": "clarification",
+      "caminho_esperado_ok": true
+    }
+  ]
+}

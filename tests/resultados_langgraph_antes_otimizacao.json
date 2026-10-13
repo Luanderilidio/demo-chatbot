@@ -1,0 +1,163 @@
+{
+  "executado_em_utc": "2026-10-13T01:24:23.932570+00:00",
+  "llm": "llama3.2:3b",
+  "embedding": "nomic-embed-text",
+  "avaliacao": "exemplos reais para inspeção, sem nota de precisão",
+  "cases": [
+    {
+      "caso": "origem",
+      "pergunta": "Qual é a origem da soja?",
+      "filtro": "soja",
+      "etapas": [
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 0,
+          "search_number": 1,
+          "query": "Qual é a origem da soja?"
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 1
+        },
+        {
+          "type": "step",
+          "node": "responder",
+          "attempt": 1
+        }
+      ],
+      "resposta": "A soja é originária da Ásia, mais provavelmente do nordeste da China, onde surgiu como uma planta ras-teira, muito distinta da soja comercial que cultivamos hoje.",
+      "fontes": [
+        {
+          "pagina": 19,
+          "source": "500perguntas-soja.pdf",
+          "cultura": "soja",
+          "titulo": "500 Perguntas, 500 Respostas - Soja (Embrapa)",
+          "total_paginas": 280
+        },
+        {
+          "cultura": "soja",
+          "total_paginas": 280,
+          "source": "500perguntas-soja.pdf",
+          "titulo": "500 Perguntas, 500 Respostas - Soja (Embrapa)",
+          "pagina": 233
+        }
+      ],
+      "avaliacoes": [
+        {
+          "decision": "sufficient",
+          "evidence_ids": [
+            1,
+            4
+          ],
+          "reason": "A origem da soja é mencionada nas fontes [1] e [2] como sendo da Ásia, mais provavelmente do nordeste da China. Além disso, a fonte [3] menciona que a soja foi domesticada e melhorada por cientistas da antiga China, enquanto a fonte [4] destaca o valor nutricional da soja, incluindo seu teor de proteínas e minerais. A fonte [4] também menciona que a soja não contém amido, o que é uma característica única da soja. ",
+          "clarification": ""
+        }
+      ],
+      "resultado": "answered",
+      "segundos": 50.29,
+      "resultado_esperado": "answered",
+      "caminho_esperado_ok": true
+    },
+    {
+      "caso": "ausente",
+      "pergunta": "Qual é o preço da soja hoje em Cuiabá?",
+      "filtro": "soja",
+      "etapas": [
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 0,
+          "search_number": 1,
+          "query": "Qual é o preço da soja hoje em Cuiabá?"
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 1
+        },
+        {
+          "type": "step",
+          "node": "reformular",
+          "attempt": 1
+        },
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 1,
+          "search_number": 2,
+          "query": "Qual é o preço da soja hoje em Cuiabá?\nTermos de busca: preço da soja em Cuiabá atualmente"
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 2
+        },
+        {
+          "type": "step",
+          "node": "sem_evidencia",
+          "attempt": 2
+        }
+      ],
+      "resposta": "Não encontrei evidências suficientes nos trechos consultados após duas buscas. Isso não prova que a informação não exista no acervo. Reformule a pergunta ou indique uma fonte mais específica.",
+      "fontes": [],
+      "avaliacoes": [
+        {
+          "decision": "insufficient",
+          "evidence_ids": [],
+          "reason": "Não há preço atual mencionado.",
+          "clarification": ""
+        },
+        {
+          "decision": "insufficient",
+          "evidence_ids": [],
+          "reason": "Não foi possível confirmar as passagens indicadas nas respectivas fontes.",
+          "clarification": ""
+        }
+      ],
+      "resultado": "insufficient",
+      "segundos": 16.99,
+      "resultado_esperado": "insufficient",
+      "caminho_esperado_ok": true
+    },
+    {
+      "caso": "ambigua",
+      "pergunta": "Como controlar essa doença?",
+      "filtro": null,
+      "etapas": [
+        {
+          "type": "step",
+          "node": "buscar",
+          "attempt": 0,
+          "search_number": 1,
+          "query": "Como controlar essa doença?"
+        },
+        {
+          "type": "step",
+          "node": "avaliar",
+          "attempt": 1
+        },
+        {
+          "type": "step",
+          "node": "esclarecer",
+          "attempt": 1
+        }
+      ],
+      "resposta": "Qual doença, praga ou problema você quer abordar? Informe também a cultura.\nEnvie a pergunta completa incluindo esse detalhe para uma nova consulta.",
+      "fontes": [],
+      "avaliacoes": [
+        {
+          "decision": "clarify",
+          "evidence_ids": [],
+          "reason": "Referência não identificada na pergunta atual.",
+          "clarification": "Qual doença, praga ou problema você quer abordar? Informe também a cultura."
+        }
+      ],
+      "resultado": "clarification",
+      "segundos": 0.14,
+      "resultado_esperado": "clarification",
+      "caminho_esperado_ok": true
+    }
+  ]
+}
